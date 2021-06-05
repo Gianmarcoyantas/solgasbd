@@ -72,9 +72,7 @@ if(($_SESSION['acceso']<>true)){
                        <li>
                             <a style="font-size: 20px" href="Clientes.php"><img src="imagenes/cliente.png" width="40">Clientes</a>
                         </li>
-                        <li>
-                            <a style="font-size: 20px;text-decoration-line: none" href="../Vista/CasillaEntrada.php"><img src="imagenes/cliente.png" width="40">Casilla Electronica</a>
-                        </li>
+                        
                         <li>
                             <a style="font-size: 20px" href="Cerrar.php"><img src="imagenes/salir.png" width="40">Salir</a>
                         </li>
@@ -106,9 +104,51 @@ if(($_SESSION['acceso']<>true)){
                     <div class="container-fluid">
                         
                         <h3 style="font-size: 30px" align="center"><b>MANTENIMIENTO DE PRODUCTOS</b></h3>
-                      
+                       <a href="Formulario.php?op=1&cod=0" class="btn btn-dark" >Agregar Nuevo Producto</a>
                         <center>
-                           
+                           <table class="table" border="1" align="center"  style="margin-top: 15px">
+
+                                    
+                                
+                            </button>
+                                <tr style="background: #444; color: white">
+                                    <th style="font-size: 15px" align="center"><center>Codigo</center></th>
+                                    <th style="font-size: 15px" align="center"><center>Descripción</center></th>
+                                    <th style="font-size: 15px" align="center"><center>Precio</center></th>
+                                    <th style="font-size: 15px" align="center"><center>Stock</center></th>
+                                    <th style="font-size: 15px" align="center"><center>Estado</center></th>
+                                    <th style="font-size: 15px" align="center"><center>Imagen</center></th>
+                                    <th style="font-size: 15px" align="center"><center>Acción</center></th>
+                                    
+                                </tr>
+                                <?php
+                                
+                                $metodos=new MetodosDAO();
+                                $lista=$metodos->ListarProductos();
+                                foreach ($lista as $row) {
+                                    ?>
+                                <tr>
+                                    <td align="center"><?php echo "PRO-000-".$row[0]?></td>
+                                    <td align="center"><?php echo $row[1]?></td>
+                                    <td align="center"><?php echo "S./ ".$row[2]?></td>
+                                    <td align="center"><?php echo $row[3]?></td>
+                                    <td align="center"><?php echo $row[4]?></td>
+                                    <th><center><img src="../Imagenes/<?php echo $row[6]?>" width="60" height="50"></center></th>
+                                    <td align="center">
+                                        <a href="Formulario.php?op=3&cod=<?php echo $row[0]?>" class="btn btn-primary" color:orange>Editar</a>
+                                        <a href="Mantenimiento.php?op=2&cod=<?php echo $row[0]?>" class="btn btn-danger"  color:red>Eliminar</a>
+                                    </td>
+                                    <!--<th><a class="btn btn-outline-primary" style="margin-top: 3px;margin-bottom: 3px;" 
+                                           href="Mantenimiento.php?op=2&cod=<?php echo $row[0]?>">Eliminar</a> 
+                                        || <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" 
+                                                   style="margin-top: 5px; margin-bottom: 5px;" onclick="mostrarDetalle(3,<?php echo $row[0]?>)">Editar</button></th>-->
+                                
+                                 
+                                </tr>
+                                <?php
+                                }
+                                ?>
+                            </table>
                             
                            <!-- <h3 align="center">
                                 <a href="Formulario.php?op=1&cod=0" class="btn btn-primary">Add Nuevos Productos</a>
@@ -214,6 +254,4 @@ function mostrarDetalle(op,cod){
 
 </html>
 <!-- end document-->
-
-
 
