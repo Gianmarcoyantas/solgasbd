@@ -60,7 +60,7 @@ $lista=$_SESSION['lista'];
             <li class="nav-item">
               <a  class="nav-link" href="" data-toggle="modal" data-target="#modalLogin">Iniciar Sesion</a>
             </li>
-
+<li class="nav-item"><a  class="nav-link" href="libro.php"><img style="width: 20px" src="https://images.emojiterra.com/twitter/v13.0/512px/1f4d6.png">Libro de Reclamaciones</a></li>
            
             <?php
             }else{
@@ -71,6 +71,7 @@ $lista=$_SESSION['lista'];
              <li class="nav-item">
                  <a href="Cerrar.php" class="nav-link">Cerrar Sesion</a>
             </li>
+            <li class="nav-item"><a  class="nav-link" href="libro.php"><img style="width: 20px" src="https://images.emojiterra.com/twitter/v13.0/512px/1f4d6.png">Libro de Reclamaciones</a></li>
             
             <?php
             }
