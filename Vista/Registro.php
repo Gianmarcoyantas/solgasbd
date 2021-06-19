@@ -25,7 +25,7 @@ include '../DAO/MetodosDAO.php';
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
         <a class="navbar-brand" href="">Distribuidora Norteña</a>
-        <a style="color:#FF0000;" <?php echo "<font color='red'>" . "Fecha: " . date("d/m/Y") . " Hora " . date("h:i:sa"); ?>> </a>
+        <!--<a style="color:#FF0000;" <?php echo "<font color='red'>" . "Fecha: " . date("d/m/Y") . " Hora " . date("h:i:sa"); ?>> </a> -->
         
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -76,8 +76,9 @@ include '../DAO/MetodosDAO.php';
                 <tr>
                     <td  colspan="2"><div style="margin-left: 50px" class="form-check">
                         <input onclick="vali();" type="checkbox" class="form-check-input" name="check1" id="check1" value="SI">
-    <label class="form-check-label" for="exampleCheck1"><a style="text-decoration-line: none" href="#">(*) He leído y aceptado la política de privacidad de Solgas</a></label>
-  </div></td>
+                    <label class="form-check-label" for="exampleCheck1">
+                        <a style="text-decoration-line: none" href="#">(*) He leído y aceptado la política de privacidad de Solgas</a></label>
+  </div>            </td>
                 </tr>  
                 <br>
             </table>
