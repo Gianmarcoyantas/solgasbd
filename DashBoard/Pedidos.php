@@ -143,7 +143,11 @@ if(($_SESSION['acceso']<>true)){
                                          <td align="center"><?php echo "PED-000-".$row[0]?></td>
                                          <td align="center"><?php echo "CLI-000-".$row[1]?></td>
                                          <td align="center"><?php echo $row[2]?></td>
-                                         <td align="center"><?php echo $row[3]?></td>
+                                         <?php
+                                         $fecha=$row[3];
+                                         $fec=date("d/m/Y", strtotime($fecha));
+                                         ?>
+                                         <td align="center"><?php echo $fec?></td>
                                          <td align="center"><a class="btn btn-warning" onclick="imprimir('<?php echo $row[0] ?>');" >Imprimir Boleta</a></td>
                                          </tr>
                                          <?php

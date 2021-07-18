@@ -73,6 +73,9 @@ if(($_SESSION['acceso']<>true)){
                        <li style="background-color: #ECEBEC;" class="active has-sub">
                             <a style="font-size: 20px" href="Clientes.php"><img src="imagenes/cliente.png" width="40">Clientes</a>
                         </li>
+                         <li>
+                            <a style="font-size: 20px;text-decoration-line: none" href="../Vista/CasillaEntrada.php"><img src="imagenes/cliente.png" width="40">Casilla Electronica</a>
+                        </li>
                         <li>
                             <a style="font-size: 20px" href="Cerrar.php"><img src="imagenes/salir.png" width="40">Salir</a>
                         </li>
